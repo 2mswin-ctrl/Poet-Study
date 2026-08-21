@@ -1,1 +1,1052 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤동주와 이육사의 자아성찰 시에 나타난 '부끄러움'과 현대 청소년의 정체성</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Noto Serif KR & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Serif+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Noto Serif KR', 'serif'],
+                    },
+                    colors: {
+                        dongju: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#3b82f6',
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                        },
+                        yooksa: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            700: '#c2410c',
+                            900: '#7c2d12',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .poem-text {
+            font-family: 'Noto Serif KR', serif;
+            line-height: 2.1;
+            letter-spacing: -0.01em;
+        }
+        .modal-backdrop {
+            background-color: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(8px);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-indigo-500 selection:text-white min-h-screen">
 
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="scrollToTop()">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-blue-600 to-amber-600 flex items-center justify-center text-white font-serif font-bold text-xl shadow-md">
+                        詩
+                    </div>
+                    <div>
+                        <span class="text-base font-bold text-slate-800 block leading-none">문학 자아성찰 탐구</span>
+                        <span class="text-sm text-slate-500">윤동주 & 이육사 시 비평</span>
+                    </div>
+                </div>
+                
+                <!-- Quick Navigation Pills -->
+                <nav class="hidden md:flex space-x-2 text-sm font-medium">
+                    <button onclick="scrollToSection('sec-reason')" class="px-4 py-2 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">주제 선정 이유</button>
+                    <button onclick="scrollToSection('sec-intro')" class="px-4 py-2 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">서론</button>
+                    <button onclick="scrollToSection('sec-body')" class="px-4 py-2 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">본론</button>
+                    <button onclick="scrollToSection('sec-conclusion')" class="px-4 py-2 rounded-md text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition">결론</button>
+                    <button onclick="scrollToSection('sec-appendix')" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition shadow-sm">부록 (활동지)</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-slate-50 to-white border-b border-slate-200">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-semibold bg-indigo-100 text-indigo-700 border border-indigo-200 mb-6 shadow-sm">
+                <i class="fa-solid fa-book-open mr-2"></i> 문학 기반 정체성 탐구 보고서
+            </span>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight font-serif mb-8">
+                윤동주와 이육사의 자아성찰 시에 나타난<br class="hidden sm:inline"/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-amber-600">'부끄러움'과 현대 청소년의 정체성</span>
+            </h1>
+            <p class="text-slate-600 text-base sm:text-lg max-w-3xl mx-auto leading-relaxed mb-10">
+                일제강점기 극단적 한계상황 속 윤동주의 내면적 '부끄러움'과 이육사의 '의지적 초극'을 비교 분석하고, 현대 청소년의 정체성 혼란 극복 및 건강한 자아 통합 방향 도출.
+            </p>
+            
+            <div class="p-5 rounded-xl bg-white shadow-md border border-slate-200 max-w-2xl mx-auto text-left">
+                <div class="flex items-center text-sm text-amber-600 font-bold mb-3">
+                    <i class="fa-solid fa-circle-info mr-2"></i> 인터랙티브 탐구 안내
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    아래 모든 <span class="text-indigo-600 font-bold">하위 제목(카테고리 버튼)</span> 클릭 시, 해당 탐구 내용의 상세 세부 보고서 및 분석 자료 팝업창 활성화.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+        <!-- 1. 주제 선정 이유 -->
+        <section id="sec-reason" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-8 border-b border-slate-200 pb-4">
+                <span class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg shadow-sm">1</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif">주제 선정 이유</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 하위 제목 1-1 -->
+                <div class="bg-white hover:bg-slate-50 transition p-8 rounded-2xl border border-slate-200 cursor-pointer group flex flex-col justify-between shadow-sm hover:shadow-md hover:border-blue-400" onclick="openModal('modal-reason-1')">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-bold px-3 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">하위 제목 1-1</span>
+                            <i class="fa-solid fa-up-right-from-square text-sm text-slate-400 group-hover:text-blue-500 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-blue-600 transition mb-3">
+                            현대 청소년의 정체성 혼란과 수치심 경험
+                        </h3>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            학업, 진로 압박, SNS 타인 시선 속 주체적 자아 상실 및 정체성 불안 현실 진단.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 text-sm text-blue-600 font-mono font-semibold flex items-center justify-between">
+                        <span>상세 분석 팝업 보기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- 하위 제목 1-2 -->
+                <div class="bg-white hover:bg-slate-50 transition p-8 rounded-2xl border border-slate-200 cursor-pointer group flex flex-col justify-between shadow-sm hover:shadow-md hover:border-blue-400" onclick="openModal('modal-reason-2')">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-bold px-3 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">하위 제목 1-2</span>
+                            <i class="fa-solid fa-up-right-from-square text-sm text-slate-400 group-hover:text-blue-500 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-blue-600 transition mb-3">
+                            문학적 자아 성찰을 통한 정체성 회복 모색
+                        </h3>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            윤동주의 '부끄러움'과 이육사의 '초극 의지' 탐구를 통한 성장의 진통 재해석.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 text-sm text-blue-600 font-mono font-semibold flex items-center justify-between">
+                        <span>상세 분석 팝업 보기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 서론 -->
+        <section id="sec-intro" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-8 border-b border-slate-200 pb-4">
+                <span class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-lg shadow-sm">2</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif">서론</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- 서론 - 탐구 배경 -->
+                <div class="bg-white hover:bg-slate-50 transition p-8 rounded-2xl border border-slate-200 cursor-pointer group flex flex-col justify-between shadow-sm hover:shadow-md hover:border-indigo-400" onclick="openModal('modal-intro-bg')">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-bold px-3 py-1 rounded bg-indigo-50 text-indigo-700 border border-indigo-200">하위 제목 2-1</span>
+                            <i class="fa-solid fa-up-right-from-square text-sm text-slate-400 group-hover:text-indigo-500 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-indigo-600 transition mb-3">탐구 배경</h3>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            문학 작품의 자아 관조 거울 역할 및 청소년기 자아 통합 유의미성 제시.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 text-sm text-indigo-600 font-mono font-semibold flex items-center justify-between">
+                        <span>상세 분석 팝업 보기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- 서론 - 탐구 목적 -->
+                <div class="bg-white hover:bg-slate-50 transition p-8 rounded-2xl border border-slate-200 cursor-pointer group flex flex-col justify-between shadow-sm hover:shadow-md hover:border-indigo-400" onclick="openModal('modal-intro-purpose')">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-bold px-3 py-1 rounded bg-indigo-50 text-indigo-700 border border-indigo-200">하위 제목 2-2</span>
+                            <i class="fa-solid fa-up-right-from-square text-sm text-slate-400 group-hover:text-indigo-500 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-indigo-600 transition mb-3">탐구 목적</h3>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            대표 시 분석, 자아 성찰 양상 비교, 청소년 정체성 시사점 도출 목표 설정.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 text-sm text-indigo-600 font-mono font-semibold flex items-center justify-between">
+                        <span>상세 분석 팝업 보기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- 서론 - 탐구 방법 및 과정 -->
+                <div class="bg-white hover:bg-slate-50 transition p-8 rounded-2xl border border-slate-200 cursor-pointer group flex flex-col justify-between shadow-sm hover:shadow-md hover:border-indigo-400" onclick="openModal('modal-intro-method')">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-bold px-3 py-1 rounded bg-indigo-50 text-indigo-700 border border-indigo-200">하위 제목 2-3</span>
+                            <i class="fa-solid fa-up-right-from-square text-sm text-slate-400 group-hover:text-indigo-500 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-indigo-600 transition mb-3">탐구 방법 및 과정</h3>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            문헌 연구, 심층 비교 분석, 발달심리학 연계, 보고서 작성 단계 구체화.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 text-sm text-indigo-600 font-mono font-semibold flex items-center justify-between">
+                        <span>상세 분석 팝업 보기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 본론 -->
+        <section id="sec-body" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-8 border-b border-slate-200 pb-4">
+                <span class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg shadow-sm">3</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif">본론</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- 하위 제목 3-1 -->
+                <div class="bg-white hover:bg-slate-50 transition p-8 rounded-2xl border border-slate-200 cursor-pointer group shadow-sm hover:shadow-md hover:border-blue-400" onclick="openModal('modal-body-dongju')">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm font-bold px-3 py-1 rounded bg-blue-50 text-blue-700 border border-blue-200">하위 제목 3-1</span>
+                        <i class="fa-solid fa-magnifying-glass text-sm text-slate-400 group-hover:text-blue-500 transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-blue-600 transition mb-4">
+                        윤동주 시에 나타난 부끄러움과 내면 성찰
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed mb-6">
+                        도덕적 성찰을 통한 '부끄러움'의 고결한 자아 회복 동력화 및 내면 관조.<br/>
+                        <span class="text-blue-600 font-semibold mt-2 block">· 자화상, 쉽게 쓰여진 시 비교 분석 포함</span>
+                    </p>
+                    <div class="text-sm text-blue-600 font-mono font-semibold flex items-center justify-between border-t border-slate-100 pt-4">
+                        <span><i class="fa-regular fa-folder-open mr-2"></i> 작품 전문 및 시어 분석 팝업 보기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- 하위 제목 3-2 -->
+                <div class="bg-white hover:bg-slate-50 transition p-8 rounded-2xl border border-slate-200 cursor-pointer group shadow-sm hover:shadow-md hover:border-amber-400" onclick="openModal('modal-body-yooksa')">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm font-bold px-3 py-1 rounded bg-amber-50 text-amber-700 border border-amber-200">하위 제목 3-2</span>
+                        <i class="fa-solid fa-magnifying-glass text-sm text-slate-400 group-hover:text-amber-500 transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-amber-600 transition mb-4">
+                        이육사 시에 나타난 의지적 자아와 초극 의지
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed mb-6">
+                        비극적 현실 직시 및 강렬한 초극 의지 발휘와 선구자적 결의.<br/>
+                        <span class="text-amber-600 font-semibold mt-2 block">· 절정, 광야 시 비교 분석 포함</span>
+                    </p>
+                    <div class="text-sm text-amber-600 font-mono font-semibold flex items-center justify-between border-t border-slate-100 pt-4">
+                        <span><i class="fa-regular fa-folder-open mr-2"></i> 작품 전문 및 시어 분석 팝업 보기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- 하위 제목 3-3 -->
+                <div class="bg-white hover:bg-slate-50 transition p-8 rounded-2xl border border-slate-200 cursor-pointer group shadow-sm hover:shadow-md hover:border-indigo-400" onclick="openModal('modal-body-compare')">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm font-bold px-3 py-1 rounded bg-indigo-50 text-indigo-700 border border-indigo-200">하위 제목 3-3</span>
+                        <i class="fa-solid fa-code-compare text-sm text-slate-400 group-hover:text-indigo-500 transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-indigo-600 transition mb-4">
+                        윤동주와 이육사의 성찰 방식 비교
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed mb-6">
+                        성찰 매개체, 핵심 정서, 자아의 분열과 화해/승화 양상 비교 분석.
+                    </p>
+                    <div class="text-sm text-indigo-600 font-mono font-semibold flex items-center justify-between border-t border-slate-100 pt-4">
+                        <span><i class="fa-solid fa-table mr-2"></i> 대조 비교표 팝업 보기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- 하위 제목 3-4 -->
+                <div class="bg-white hover:bg-slate-50 transition p-8 rounded-2xl border border-slate-200 cursor-pointer group shadow-sm hover:shadow-md hover:border-emerald-400" onclick="openModal('modal-body-youth')">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm font-bold px-3 py-1 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">하위 제목 3-4</span>
+                        <i class="fa-solid fa-users text-sm text-slate-400 group-hover:text-emerald-500 transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 group-hover:text-emerald-600 transition mb-4">
+                        현대 청소년의 정체성 혼란과 자아 성찰 과정 비교
+                    </h3>
+                    <p class="text-base text-slate-600 leading-relaxed mb-6">
+                        수동적 수치심의 주동적 부끄러움으로의 전환 및 회복탄력성 도출.
+                    </p>
+                    <div class="text-sm text-emerald-600 font-mono font-semibold flex items-center justify-between border-t border-slate-100 pt-4">
+                        <span><i class="fa-solid fa-diagram-project mr-2"></i> 구조적 비교 메커니즘 보기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 결론 -->
+        <section id="sec-conclusion" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-8 border-b border-slate-200 pb-4">
+                <span class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg shadow-sm">4</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif">결론</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 하위 제목 4-1 -->
+                <div class="bg-white hover:bg-slate-50 transition p-8 rounded-2xl border border-slate-200 cursor-pointer group flex flex-col justify-between shadow-sm hover:shadow-md hover:border-emerald-400" onclick="openModal('modal-conclusion-1')">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-bold px-3 py-1 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">하위 제목 4-1</span>
+                            <i class="fa-solid fa-up-right-from-square text-sm text-slate-400 group-hover:text-emerald-500 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-emerald-600 transition mb-3">
+                            시적 자아 성찰 유산 요약
+                        </h3>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            윤동주의 순수 자아 회복과 이육사의 역사의식 승화를 통한 성찰 유산 결론.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 text-sm text-emerald-600 font-mono font-semibold flex items-center justify-between">
+                        <span>상세 요약 팝업 보기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <!-- 하위 제목 4-2 -->
+                <div class="bg-white hover:bg-slate-50 transition p-8 rounded-2xl border border-slate-200 cursor-pointer group flex flex-col justify-between shadow-sm hover:shadow-md hover:border-emerald-400" onclick="openModal('modal-conclusion-2')">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-bold px-3 py-1 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">하위 제목 4-2</span>
+                            <i class="fa-solid fa-up-right-from-square text-sm text-slate-400 group-hover:text-emerald-500 transition"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 group-hover:text-emerald-600 transition mb-3">
+                            현대 청소년 정체성 확립 시사점
+                        </h3>
+                        <p class="text-base text-slate-600 leading-relaxed">
+                            주체적 '성찰의 부끄러움'과 '의지적 초극'을 바탕으로 한 건강한 자아 정립 방안.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 text-sm text-emerald-600 font-mono font-semibold flex items-center justify-between">
+                        <span>상세 시사점 팝업 보기</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 부록 (활동지 및 서식) -->
+        <section id="sec-appendix" class="scroll-mt-24">
+            <div class="flex items-center space-x-3 mb-8 border-b border-slate-200 pb-4">
+                <span class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-lg shadow-sm">5</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-serif">부록</h2>
+                <span class="text-sm font-semibold text-purple-700 bg-purple-50 px-3 py-1 rounded-full border border-purple-200">인터랙티브 자아성찰 활동지</span>
+            </div>
+
+            <p class="text-base text-slate-600 mb-8">
+                아래 하위 제목 카드를 클릭하여 팝업으로 상세 성찰 질문을 확인하거나, 직접 아래 활동지를 작성하여 개인 정체성 선언 카드를 생성함.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <!-- 부록 - 윤동주 모델 -->
+                <div class="bg-white hover:bg-slate-50 transition p-6 rounded-2xl border border-slate-200 cursor-pointer group shadow-sm hover:shadow-md hover:border-purple-300" onclick="openModal('modal-app-dongju')">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-sm font-bold text-purple-600">부록 5-1</span>
+                        <i class="fa-solid fa-pen-to-square text-sm text-slate-400 group-hover:text-purple-500 transition"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 group-hover:text-purple-600 transition mb-3">윤동주 모델</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        내면 관조 및 정직한 '부끄러움' 탐색 (우물 매개체, 두 자아의 최초의 악수).
+                    </p>
+                </div>
+
+                <!-- 부록 - 이육사 모델 -->
+                <div class="bg-white hover:bg-slate-50 transition p-6 rounded-2xl border border-slate-200 cursor-pointer group shadow-sm hover:shadow-md hover:border-purple-300" onclick="openModal('modal-app-yooksa')">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-sm font-bold text-purple-600">부록 5-2</span>
+                        <i class="fa-solid fa-fire text-sm text-slate-400 group-hover:text-purple-500 transition"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 group-hover:text-purple-600 transition mb-3">이육사 모델</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        한계 상황 인식 및 주체적 '초극 의지' 탐색 (칼날 상황, 강철로 된 무지개).
+                    </p>
+                </div>
+
+                <!-- 부록 - 자아 통합 -->
+                <div class="bg-white hover:bg-slate-50 transition p-6 rounded-2xl border border-slate-200 cursor-pointer group shadow-sm hover:shadow-md hover:border-purple-300" onclick="openModal('modal-app-integration')">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-sm font-bold text-purple-600">부록 5-3</span>
+                        <i class="fa-solid fa-gem text-sm text-slate-400 group-hover:text-purple-500 transition"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-800 group-hover:text-purple-600 transition mb-3">자아 통합</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        나만의 정체성 선언문 및 한 줄 시 작성 기반 자아 확립.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Direct Interactive Activity Form -->
+            <div class="bg-white rounded-2xl p-8 border border-purple-200 shadow-xl space-y-8">
+                <div class="border-b border-slate-100 pb-5">
+                    <h3 class="text-xl font-bold text-purple-700 font-serif flex items-center">
+                        <i class="fa-solid fa-feather-pointed mr-3"></i> 자아성찰 온라인 활동지 실습
+                    </h3>
+                    <p class="text-sm text-slate-500 mt-2">
+                        자신의 생각 작성 후 '선언 카드 생성' 버튼 클릭 시 실시간 정체성 카드 출력.
+                    </p>
+                </div>
+
+                <form id="identityForm" onsubmit="generateCard(event)" class="space-y-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">이름 / 닉네임</label>
+                            <input type="text" id="inputName" required placeholder="예: 윤성찰" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-base text-slate-900 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 focus:outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 mb-2">작성일자</label>
+                            <input type="text" id="inputDate" value="2026년 8월 21일" class="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-3 text-base text-slate-900 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 focus:outline-none transition">
+                        </div>
+                    </div>
+
+                    <!-- 1. 윤동주 모델 작성 -->
+                    <div class="p-6 bg-blue-50/50 rounded-2xl border border-blue-100 space-y-4">
+                        <span class="text-sm font-bold text-blue-700 flex items-center">
+                            <i class="fa-solid fa-water mr-2"></i> [윤동주 모델] 내면 관조와 정직한 '부끄러움'
+                        </span>
+                        <div>
+                            <label class="block text-sm text-slate-600 mb-2 font-medium">나를 들여다보게 만드는 나만의 '우물' (매개체)</label>
+                            <input type="text" id="inputWell" required placeholder="예: 밤에 쓰는 개인 일기장, 산책길" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-base text-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 focus:outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-slate-600 mb-2 font-medium">미숙한 나와 나누고 싶은 화해의 한마디 (최초의 악수)</label>
+                            <input type="text" id="inputHandshake" required placeholder="예: 불안해하지 마, 차근차근 나아가면 돼." class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-base text-slate-900 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 focus:outline-none transition">
+                        </div>
+                    </div>
+
+                    <!-- 2. 이육사 모델 작성 -->
+                    <div class="p-6 bg-amber-50/50 rounded-2xl border border-amber-100 space-y-4">
+                        <span class="text-sm font-bold text-amber-700 flex items-center">
+                            <i class="fa-solid fa-mountain mr-2"></i> [이육사 모델] 한계 상황과 주체적 '초극 의지'
+                        </span>
+                        <div>
+                            <label class="block text-sm text-slate-600 mb-2 font-medium">내가 직면한 가장 큰 외부적 시련/한계 (나의 '칼날')</label>
+                            <input type="text" id="inputBlade" required placeholder="예: 학업 성적에 대한 압박감, 타인과의 비교" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-base text-slate-900 focus:border-amber-500 focus:ring-2 focus:ring-amber-100 focus:outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm text-slate-600 mb-2 font-medium">시련을 견디게 하는 나의 회복탄력성 ('강철로 된 무지개')</label>
+                            <input type="text" id="inputRainbow" required placeholder="예: 포기하지 않는 끈기, 가족과 친구의 신뢰" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-base text-slate-900 focus:border-amber-500 focus:ring-2 focus:ring-amber-100 focus:outline-none transition">
+                        </div>
+                    </div>
+
+                    <!-- 3. 자아 통합 작성 -->
+                    <div class="p-6 bg-emerald-50/50 rounded-2xl border border-emerald-100 space-y-4">
+                        <span class="text-sm font-bold text-emerald-700 flex items-center">
+                            <i class="fa-solid fa-star mr-2"></i> [자아 통합] 나만의 정체성 선언문 및 한 줄 시
+                        </span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm text-slate-600 mb-2 font-medium">마주할 나의 한계/부끄러움</label>
+                                <input type="text" id="inputShame" required placeholder="예: 타인의 시선에 연연하는 마음" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-base text-slate-900 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-slate-600 mb-2 font-medium">품고 일어설 나의 가치/의지</label>
+                                <input type="text" id="inputWill" required placeholder="예: 주체적인 나만의 소신" class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-base text-slate-900 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm text-slate-600 mb-2 font-medium">나를 담은 한 줄 시</label>
+                            <input type="text" id="inputOneLinePoem" required placeholder="예: 어두운 육첩방에 등불을 켜듯, 내 작은 책상 위에서 내일의 아침을 기다린다." class="w-full bg-white border border-slate-300 rounded-xl px-4 py-2.5 text-base text-slate-900 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-base font-bold rounded-xl transition shadow-lg flex items-center justify-center">
+                        <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> 정체성 선언 카드 생성함
+                    </button>
+                </form>
+
+                <!-- Generated Identity Card Result Container -->
+                <div id="cardResult" class="hidden mt-10 p-8 bg-gradient-to-b from-indigo-50 to-white rounded-3xl border-2 border-indigo-200 shadow-2xl relative">
+                    <div class="text-center border-b border-indigo-100 pb-5 mb-6">
+                        <span class="text-sm tracking-widest text-indigo-500 font-mono font-bold">청소년 정체성 선언서</span>
+                        <h4 class="text-2xl font-bold font-serif text-slate-900 mt-2" id="cardOwnerTitle">OOO의 정체성 선언문</h4>
+                        <span class="text-sm text-slate-500 mt-1 block" id="cardDate">2026년 8월 21일</span>
+                    </div>
+
+                    <div class="space-y-6 text-sm text-slate-700">
+                        <div class="p-5 bg-white rounded-xl border border-slate-100 shadow-sm">
+                            <span class="text-indigo-600 font-bold block mb-2 text-base">나의 정체성 선언문</span>
+                            <p class="leading-relaxed font-serif text-lg">
+                                "나는 <span id="cardShame" class="text-blue-600 font-bold"></span>(을/를) 정직하게 마주하되,<br/>
+                                가슴속에는 <span id="cardWill" class="text-amber-600 font-bold"></span>(을/를) 품고 스스로 바로 서는 사람임."
+                            </p>
+                        </div>
+
+                        <div class="p-5 bg-white rounded-xl border border-slate-100 shadow-sm">
+                            <span class="text-purple-600 font-bold block mb-2 text-base">나를 담은 한 줄 시</span>
+                            <p class="italic font-serif text-indigo-700 text-lg" id="cardPoem">
+                                "..."
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-600 bg-slate-50 p-5 rounded-xl border border-slate-100">
+                            <div>· 나의 우물: <span id="cardWell" class="font-semibold text-slate-800"></span></div>
+                            <div>· 나의 칼날: <span id="cardBlade" class="font-semibold text-slate-800"></span></div>
+                            <div>· 회복탄력성: <span id="cardRainbow" class="font-semibold text-slate-800"></span></div>
+                            <div>· 최초의 악수: <span id="cardHandshake" class="font-semibold text-slate-800"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-indigo-100 flex justify-end space-x-3">
+                        <button onclick="copyCardText()" class="px-5 py-2.5 bg-slate-800 text-white rounded-lg text-sm font-semibold hover:bg-slate-900 transition shadow-sm">
+                            <i class="fa-regular fa-copy mr-2"></i> 텍스트 복사함
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-100 border-t border-slate-200 py-12 px-4 text-center text-sm text-slate-500">
+        <div class="max-w-5xl mx-auto space-y-3">
+            <p class="font-serif text-slate-600 font-semibold text-base">윤동주와 이육사의 자아성찰 시에 나타난 '부끄러움'과 현대 청소년의 정체성 탐구 보고서</p>
+            <p>문학 분석 및 시적 성찰 모델 구축 프로젝트</p>
+        </div>
+    </footer>
+
+    <!-- ==================== POPUP MODALS SECTION ==================== -->
+    <div id="modalOverlay" class="fixed inset-0 z-50 modal-backdrop hidden flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+        <div class="relative w-full max-w-3xl bg-white border border-slate-200 rounded-3xl shadow-2xl overflow-hidden my-8 max-h-[90vh] flex flex-col">
+            
+            <!-- Modal Header -->
+            <div id="modalHeader" class="px-8 py-5 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                <div class="flex items-center space-x-3">
+                    <span id="modalCategoryBadge" class="text-sm font-bold px-3 py-1 rounded bg-indigo-100 text-indigo-700">카테고리</span>
+                    <h3 id="modalTitle" class="text-lg sm:text-xl font-bold text-slate-900 font-serif">팝업 제목</h3>
+                </div>
+                <button onclick="closeModal()" class="w-10 h-10 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-600 hover:text-slate-900 flex items-center justify-center transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div id="modalContent" class="p-8 overflow-y-auto custom-scrollbar space-y-6 text-sm sm:text-base text-slate-700 leading-relaxed">
+                <!-- Content inserted dynamically via JS -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="px-8 py-4 border-t border-slate-100 bg-slate-50 flex justify-between items-center text-sm text-slate-500">
+                <span>하위 제목 탐구 보고서 팝업창</span>
+                <button onclick="closeModal()" class="px-5 py-2 bg-slate-800 hover:bg-slate-900 text-white font-semibold rounded-xl transition">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // All descriptions strictly end in nouns or noun forms
+        const modalData = {
+            'modal-reason-1': {
+                badge: '주제 선정 이유 1-1',
+                title: '현대 청소년의 정체성 혼란과 수치심 경험',
+                html: `
+                    <div class="space-y-6">
+                        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="text-base font-bold text-blue-700 mb-2">1. 청소년기 정체성 확립 과제</h4>
+                            <p class="leading-relaxed text-slate-600">
+                                에릭슨(Erikson)의 심리사회적 발달 이론에 따른 청소년기 핵심 과제인 '정체성 대 정체성 혼란' 단계. "나는 누구인가?"라는 근본적 질문과 주체적 자아 정립의 필요성 증대.
+                            </p>
+                        </div>
+                        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="text-base font-bold text-indigo-700 mb-2">2. 현대 사회의 불안 요소와 수치심</h4>
+                            <p class="leading-relaxed text-slate-600">
+                                과도한 입시 및 진로 경쟁, 타인과의 비교, SNS상 타자화된 시선 속 타율적 삶 노출. 이로 인한 수동적 수치심 및 자아 무력감 심화 현상 진단.
+                            </p>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-reason-2': {
+                badge: '주제 선정 이유 1-2',
+                title: '문학적 자아 성찰을 통한 정체성 회복 모색',
+                html: `
+                    <div class="space-y-6">
+                        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="text-base font-bold text-amber-600 mb-2">1. 시적 거울을 통한 내면 관조</h4>
+                            <p class="leading-relaxed text-slate-600">
+                                일제강점기 극단적 한계상황을 견뎌낸 윤동주의 도덕적 '부끄러움'과 이육사의 '의지적 초극' 비교 탐구.
+                            </p>
+                        </div>
+                        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="text-base font-bold text-emerald-700 mb-2">2. 성장의 진통으로의 재해석 지향점</h4>
+                            <p class="leading-relaxed text-slate-600">
+                                정체성 혼란을 결함이 아닌 성장의 필수 계기로 전환. 윤동주식 정직한 부끄러움과 이육사식 회복탄력성을 바탕으로 건강한 자아 통합 방향 도출.
+                            </p>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-intro-bg': {
+                badge: '서론 2-1',
+                title: '탐구 배경 구체적 설명',
+                html: `
+                    <div class="space-y-6">
+                        <div class="p-6 bg-indigo-50/50 rounded-2xl border border-indigo-100">
+                            <h4 class="text-base font-bold text-indigo-700 mb-3">문학 작품의 자아 관조 및 거울 기능</h4>
+                            <p class="leading-relaxed text-slate-700">
+                                자아 성찰을 다룬 문학 작품의 작가 내면 고백 수용 및 독자로 하여금 스스로를 비추어보는 '거울' 역할 수행. 시적 언어에 투영된 자아 탐색 과정을 다각도로 조명하는 청소년기 자아 통합의 유의미한 가치 제공.
+                            </p>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-intro-purpose': {
+                badge: '서론 2-2',
+                title: '탐구 목적 구체적 설명',
+                html: `
+                    <div class="space-y-4">
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-indigo-600 font-bold block mb-1 text-base">목적 1</span>
+                            <span class="text-slate-600">윤동주와 이육사 대표 성찰 시 전문 심층 분석 및 시적 매개체, 핵심 시어의 미학적 의미 파악.</span>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-indigo-600 font-bold block mb-1 text-base">목적 2</span>
+                            <span class="text-slate-600">윤동주 시의 '부끄러움'과 이육사 시의 '의지적 자아' 전개 양상의 다각도 비교 대조.</span>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-indigo-600 font-bold block mb-1 text-base">목적 3</span>
+                            <span class="text-slate-600">시인들의 성찰 모델을 현대 청소년의 정체성 혼란 및 비판적 자아성찰 과정에 적용하여 실천적 시사점 도출.</span>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-intro-method': {
+                badge: '서론 2-3',
+                title: '탐구 방법 및 과정 구체적 설명',
+                html: `
+                    <div class="space-y-4">
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-blue-600 font-bold block mb-2 text-base">1. 문헌 연구 및 텍스트 분석</span>
+                            <span class="text-slate-600">윤동주(&lt;자화상&gt;, &lt;쉽게 쓰여진 시&gt;)와 이육사(&lt;절정&gt;, &lt;광야&gt;) 시 전문 정밀 분석, 소재, 주제, 표현 기법, 핵심 시어 의미 도표화 및 심층 분석 진행.</span>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-indigo-600 font-bold block mb-2 text-base">2. 비교 분석</span>
+                            <span class="text-slate-600">두 시인의 성찰 매개체, 자아의 분열과 통합 양상, 핵심 정서(부끄러움 vs 초극 의지) 다각도 비교 검토.</span>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-amber-600 font-bold block mb-2 text-base">3. 현대 청소년 정체성 연계 탐구</span>
+                            <span class="text-slate-600">청소년 발달심리학 개념 접목, 일제강점기 시인의 '부끄러움'과 현대 청소년 수치심·불안의 구조적 공통점 및 차이점 논리적 비교.</span>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-emerald-600 font-bold block mb-2 text-base">4. 시사점 도출 및 보고서 작성</span>
+                            <span class="text-slate-600">탐구 결과 종합을 통한 청소년기 비판적 자아성찰과 정체성 확립 결론 도출.</span>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-body-dongju': {
+                badge: '본론 3-1',
+                title: '윤동주 시에 나타난 부끄러움과 내면 성찰',
+                html: `
+                    <div class="space-y-8">
+                        <div class="p-5 bg-blue-50/80 rounded-2xl border border-blue-100">
+                            <h4 class="text-base font-bold text-blue-800 mb-2">윤동주 '부끄러움'의 본질</h4>
+                            <p class="leading-relaxed text-slate-700">
+                                단순 열등감이나 회피의 감정이 아닌, 엄격한 도덕적 기준에 미치지 못하는 자신을 향한 정직한 고백이자 성찰의 출발점.
+                            </p>
+                        </div>
+
+                        <!-- 작품 1: 자화상 -->
+                        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                                <h5 class="text-base font-bold text-blue-700 font-serif">① &lt;자화상&gt; 전문 분석</h5>
+                                <span class="text-sm text-slate-500 font-medium">자아 관조 및 내면적 화해</span>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl poem-text text-base text-slate-800 leading-relaxed max-h-60 overflow-y-auto border border-slate-100 shadow-inner">
+                                산모퉁이를 돌아 논가 외딴 우물을 홀로 찾아가선 가만히 들여다봅니다.<br/><br/>
+                                우물 속에는 달이 밝고 구름이 흐르고 하늘이 펼치고 파아란 바람이 불고 가을이 있습니다.<br/><br/>
+                                그리고 한 사나이가 있습니다.<br/>
+                                어쩐지 그 사나이가 미워져 돌아갑니다.<br/><br/>
+                                돌아가다 생각하니 그 사나이가 가없어집니다.<br/>
+                                도로 가 들여다보니 사나이는 그대로 있습니다.<br/><br/>
+                                다시 그 사나이가 미워져 돌아갑니다.<br/>
+                                돌아가다 생각하니 그 사나이가 그리워집니다.<br/><br/>
+                                우물 속에는 달이 밝고 구름이 흘르고 하늘이 펼치고 파아란 바람이 불고 가을이 있고 추억처럼 사나이가 있습니다.
+                            </div>
+                            <div class="text-sm space-y-2 text-slate-700 bg-slate-50/50 p-4 rounded-xl border border-slate-100">
+                                <p>· <b class="text-slate-900">소재:</b> 우물, 사나이, 우물 속에 비친 자화상</p>
+                                <p>· <b class="text-slate-900">주제:</b> 암울한 시대 속 자아 성찰과 자신에 대한 애증을 거친 내면적 자아 화해</p>
+                                <p>· <b class="text-slate-900">정서 변화 구조:</b> 미움 → 가없음 → 미움 → 그리움 → 화해</p>
+                                <p>· <b class="text-slate-900">핵심 시어:</b> 우물(자아성찰 매개체), 사나이(현실적 무기력한 자아), 달·구름·하늘(아름다운 자연), 추억처럼 사나이가 있습니다(내면적 자아 화해 상태)</p>
+                            </div>
+                        </div>
+
+                        <!-- 작품 2: 쉽게 쓰여진 시 -->
+                        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                                <h5 class="text-base font-bold text-blue-700 font-serif">② &lt;쉽게 쓰여진 시&gt; 전문 분석</h5>
+                                <span class="text-sm text-slate-500 font-medium">부끄러움을 통한 현실 극복</span>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl poem-text text-base text-slate-800 leading-relaxed max-h-60 overflow-y-auto border border-slate-100 shadow-inner">
+                                창 밖에 밤비가 속살거려 육첩방은 남의 나라,<br/><br/>
+                                시인이란 슬픈 천명인 줄 알면서도 한 줄 시를 적어 볼까,<br/><br/>
+                                땀내와 사랑내 포근히 품긴 보내주신 학비 봉투를 받아 대학 노트를 끼고 늙은 교수의 강의를 들으러 간다.<br/><br/>
+                                생각해 보면 어릴 때 동무를 하나, 둘, 죄다 잃어버리고 나는 무얼 바라 나만 홀로 침전하는 것일까?<br/><br/>
+                                인생은 살기 어렵다는데 시가 이렇게 쉽게 쓰여지는 것은 부끄러운 일이다.<br/><br/>
+                                육첩방은 남의 나라 창 밖에 밤비가 속살거리는데,<br/><br/>
+                                등불을 밝혀 어둠을 조금 내몰고, 시대처럼 올 아침을 기다리는 최종의 나,<br/><br/>
+                                나는 나에게 작은 손을 내밀어 눈물과 위안으로 잡는 최초의 악수.
+                            </div>
+                            <div class="text-sm space-y-2 text-slate-700 bg-slate-50/50 p-4 rounded-xl border border-slate-100">
+                                <p>· <b class="text-slate-900">소재:</b> 밤비, 육첩방, 등불, 최초의 악수</p>
+                                <p>· <b class="text-slate-900">주제:</b> 어두운 현실 성찰과 부끄러움을 통한 현실 극복 의지</p>
+                                <p>· <b class="text-slate-900">표현 기법:</b> 수직적 시상 대비('침전'의 무기력함 vs '등불'의 의지), 변형된 수미상응</p>
+                                <p>· <b class="text-slate-900">핵심 시어:</b> 밤비/육첩방(억압적 타국 공간), 침전(무기력한 태도), 등불/아침(희망 및 민족 광복), 최초의 악수(현실적 자아와 성찰적 자아의 화해)</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-body-yooksa': {
+                badge: '본론 3-2',
+                title: '이육사 시에 나타난 의지적 자아와 초극 의지',
+                html: `
+                    <div class="space-y-8">
+                        <div class="p-5 bg-amber-50/80 rounded-2xl border border-amber-100">
+                            <h4 class="text-base font-bold text-amber-800 mb-2">이육사 '의지적 자아'의 본질</h4>
+                            <p class="leading-relaxed text-slate-700">
+                                내면 관조를 넘어 비극적 현실을 정면으로 돌파하려는 의지적 결단 및 강렬한 초극(超克) 의지 표현.
+                            </p>
+                        </div>
+
+                        <!-- 작품 1: 절정 -->
+                        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                                <h5 class="text-base font-bold text-amber-700 font-serif">① &lt;절정&gt; 전문 분석</h5>
+                                <span class="text-sm text-slate-500 font-medium">한계 상황의 역설적 승화</span>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl poem-text text-base text-slate-800 leading-relaxed max-h-60 overflow-y-auto border border-slate-100 shadow-inner">
+                                매운 계절의 채찍에 갈겨 마침내 북방으로 밀려오다.<br/><br/>
+                                하늘도 그만 지쳐 끝난 고원 서리빨 칼날진 그 위 서다.<br/><br/>
+                                어디다 무릎을 꿇어야 하나 한 점 바람 쉴 곳조차 없다.<br/><br/>
+                                이러매 눈 감아 생각해 볼밖에 겨울은 강철로 된 무지개인가 보다.
+                            </div>
+                            <div class="text-sm space-y-2 text-slate-700 bg-slate-50/50 p-4 rounded-xl border border-slate-100">
+                                <p>· <b class="text-slate-900">소재:</b> 극한의 한계 상황과 이에 맞서는 내면적 결단</p>
+                                <p>· <b class="text-slate-900">주제:</b> 절망적 한계 상황 속에서 발휘되는 강렬한 초극(超克) 의지</p>
+                                <p>· <b class="text-slate-900">표현 기법:</b> 기-승-전-결 4연 한시적 구성, <b class="text-amber-700">역설법('강철로 된 무지개')</b>을 통한 절망의 희망 승화</p>
+                                <p>· <b class="text-slate-900">핵심 시어:</b> 매운 계절/겨울(폭압적 시련), 북방/고원/서리빨 칼날(극단적 한계 공간), 강철로 된 무지개(비극적 단단함과 희망 승화의 결합)</p>
+                            </div>
+                        </div>
+
+                        <!-- 작품 2: 광야 -->
+                        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                            <div class="flex justify-between items-center border-b border-slate-100 pb-3">
+                                <h5 class="text-base font-bold text-amber-700 font-serif">② &lt;광야&gt; 전문 분석</h5>
+                                <span class="text-sm text-slate-500 font-medium">역사성과 미래 희생 결의</span>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl poem-text text-base text-slate-800 leading-relaxed max-h-60 overflow-y-auto border border-slate-100 shadow-inner">
+                                까마득한 날에 하늘이 처음 열리고 어디 닭 울 소리 들렸으랴.<br/><br/>
+                                모든 산맥들이 바다를 연모해 휘달릴 때도 차마 이곳을 범하던 못하였으리라.<br/><br/>
+                                끊임없는 광음을 부지런한 계절이 피어선 지고 큰 강물이 비로소 길을 열었다.<br/><br/>
+                                지금 눈 나리고 매화 향기 홀로 아득하니 내 여기 가난한 노래의 씨를 뿌려라.<br/><br/>
+                                다시 까마득한 날에 백마 타고 오는 초인이 있어 이 광야에서 목놓아 부르게 하리라.
+                            </div>
+                            <div class="text-sm space-y-2 text-slate-700 bg-slate-50/50 p-4 rounded-xl border border-slate-100">
+                                <p>· <b class="text-slate-900">소재:</b> 민족 삶의 터전인 '광야'의 역사성과 미래 의지</p>
+                                <p>· <b class="text-slate-900">주제:</b> 수난 극복 의지와 미래 국권 회복에 대한 확신 및 자기희생 결의</p>
+                                <p>· <b class="text-slate-900">표현 기법:</b> 시간의 흐름에 따른 구성(과거-현재-미래), 의지적·단정적 어조('~뿌려라', '~부르게 하리라')</p>
+                                <p>· <b class="text-slate-900">핵심 시어:</b> 광야(민족 터전), 눈(가혹한 시련), 매화 향기(민족적 지조·절개), 가난한 노래의 씨(자기희생 선구자적 의지), 백마 타고 오는 초인(미래 구원자/미래 세대)</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-body-compare': {
+                badge: '본론 3-3',
+                title: '윤동주와 이육사의 성찰 방식 비교',
+                html: `
+                    <div class="space-y-6">
+                        <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+                            <table class="w-full text-sm text-left text-slate-700">
+                                <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                                    <tr>
+                                        <th class="px-4 py-3 border-r border-slate-200 font-bold">구분</th>
+                                        <th class="px-4 py-3 border-r border-slate-200 text-blue-700 font-bold">윤동주 (&lt;자화상&gt;, &lt;쉽게 쓰여진 시&gt;)</th>
+                                        <th class="px-4 py-3 text-amber-700 font-bold">이육사 (&lt;절정&gt;, &lt;광야&gt;)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-100 bg-white">
+                                    <tr>
+                                        <td class="px-4 py-4 font-bold bg-slate-50 border-r border-slate-200 text-slate-800">주요 태도</td>
+                                        <td class="px-4 py-4 border-r border-slate-200 leading-relaxed">내면적 관조, 도덕적 성찰, 자화상적 고백</td>
+                                        <td class="px-4 py-4 leading-relaxed">외향적 투쟁, 역사적 결단, 선구자적 각오</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 font-bold bg-slate-50 border-r border-slate-200 text-slate-800">핵심 정서</td>
+                                        <td class="px-4 py-4 border-r border-slate-200 leading-relaxed">부끄러움, 순수함, 그리움, 안타까움</td>
+                                        <td class="px-4 py-4 leading-relaxed">초극 의지, 준열함, 비장미, 승화</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 font-bold bg-slate-50 border-r border-slate-200 text-slate-800">대표 매개체</td>
+                                        <td class="px-4 py-4 border-r border-slate-200 leading-relaxed">우물, 거울, 육첩방, 밤비, 등불</td>
+                                        <td class="px-4 py-4 leading-relaxed">서리빨 칼날, 눈, 매화 향기, 광야</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-4 py-4 font-bold bg-slate-50 border-r border-slate-200 text-slate-800">자아 통합 방식</td>
+                                        <td class="px-4 py-4 border-r border-slate-200 leading-relaxed">'최초의 악수'를 통한 현실적/성찰적 자아 화해</td>
+                                        <td class="px-4 py-4 leading-relaxed">극한 상황의 역설적 수용과 희생을 통한 승화</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-body-youth': {
+                badge: '본론 3-4',
+                title: '현대 청소년의 정체성 혼란과 자아 성찰 과정 비교',
+                html: `
+                    <div class="space-y-6">
+                        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="text-base font-bold text-emerald-700 mb-3">1. 정체성 혼란의 구조적 공통점</h4>
+                            <p class="leading-relaxed text-slate-600">
+                                일제강점기 시대적 한계상황과 현대 사회 경쟁 구도의 양상 차이 존재. 그러나 '진정한 자아와 현실적 자아 사이의 불일치'에서 비롯되는 정체성 혼란의 본질적 동일성 파악.
+                            </p>
+                        </div>
+
+                        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="text-base font-bold text-blue-700 mb-3">2. 수동적 수치심에서 주동적 '부끄러움'으로의 전환</h4>
+                            <p class="leading-relaxed text-slate-600">
+                                <b class="text-slate-800">현대 청소년 불안 및 수치심:</b> SNS상 타인의 시선, 외적 비교에 따른 수동적 수치심 유발.<br/><br/>
+                                <b class="text-slate-800">윤동주 '부끄러움':</b> 스스로 세운 도덕적·인격적 기준 미달에 따른 주동적 성찰 감정.<br/><br/>
+                                <b class="text-indigo-700">시적 모델 적용:</b> 타인 눈치 극복 및 내면 가치를 기르는 정직한 부끄러움 형성.
+                            </p>
+                        </div>
+
+                        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="text-base font-bold text-amber-700 mb-3">3. 무력감에서 '초극 의지'로의 전환</h4>
+                            <p class="leading-relaxed text-slate-600">
+                                <b class="text-slate-800">현대적 한계 상황:</b> 입시 스트레스 및 불확실한 미래 직면.<br/><br/>
+                                <b class="text-slate-800">이육사 모델 적용:</b> '서리빨 칼날' 극단적 절망 속 정신적 주도권 유지 및 역설적 승화 수용.<br/><br/>
+                                <b class="text-indigo-700">결과:</b> 외부 압박 굴복 방지 및 회복탄력성(Resilience)과 주체성 발휘.
+                            </p>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-conclusion-1': {
+                badge: '결론 4-1',
+                title: '시적 자아 성찰 유산 요약',
+                html: `
+                    <div class="space-y-6">
+                        <div class="p-6 bg-emerald-50/80 rounded-2xl border border-emerald-100 shadow-sm">
+                            <h4 class="text-base font-bold text-emerald-800 mb-3">시인들의 성찰 모델 유산</h4>
+                            <p class="leading-relaxed text-slate-700">
+                                암흑기 속에서도 자아를 놓지 않은 윤동주의 '부끄러움'을 통한 순수 자아 회복, 이육사의 '의지적 초극'을 통한 미래 광복 확신 및 역사의식 승화 수용.
+                            </p>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-conclusion-2': {
+                badge: '결론 4-2',
+                title: '현대 청소년 정체성 확립 시사점',
+                html: `
+                    <div class="space-y-6">
+                        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                            <h4 class="text-base font-bold text-slate-900 mb-3">주체적 자아 정립 방안</h4>
+                            <p class="leading-relaxed text-slate-600">
+                                청소년기 정체성 혼란과 불안은 성장 진통의 유의미한 계기임.<br/><br/>
+                                타인 시선에 종속된 수치심을 윤동주식 주동적 '성찰의 부끄러움'으로 승화시키고, 외부 시련 앞에서는 이육사식 '의지적 초극'을 발휘하여 온전한 정체성을 확립함.
+                            </p>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-app-dongju': {
+                badge: '부록 5-1',
+                title: '윤동주 모델 - 내면 관조와 정직한 부끄러움 탐색',
+                html: `
+                    <div class="space-y-4">
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-blue-700 font-bold block mb-2 text-base">나의 '우물' 찾기</span>
+                            <span class="text-slate-600">나를 정직하게 들여다보게 만드는 매개체 탐색 (예: 밤에 쓰는 일기, 혼자 걷는 산책길).</span>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-blue-700 font-bold block mb-2 text-base">부끄러움과 마주하기</span>
+                            <span class="text-slate-600">타인 시선이 아닌 스스로 세운 기준에 미치지 못해 느끼는 정직한 부끄러움/아쉬움 포착.</span>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-blue-700 font-bold block mb-2 text-base">두 자아의 화해</span>
+                            <span class="text-slate-600">현실의 미숙한 나와 내면의 이상적 내가 '최초의 악수'를 나누기 위한 위로 한마디 작성.</span>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-app-yooksa': {
+                badge: '부록 5-2',
+                title: '이육사 모델 - 한계 상황과 주체적 초극 의지 탐색',
+                html: `
+                    <div class="space-y-4">
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-amber-700 font-bold block mb-2 text-base">나의 '칼날' 인식하기</span>
+                            <span class="text-slate-600">현재 직면한 가장 큰 외부적 시련이나 한계 상황(학업, 진로 불안 등) 객관화.</span>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-amber-700 font-bold block mb-2 text-base">'강철로 된 무지개' 발굴</span>
+                            <span class="text-slate-600">시련을 견디게 해주는 회복탄력성(나만의 강점, 신념, 소중한 가치) 발견.</span>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-amber-700 font-bold block mb-2 text-base">'가난한 노래의 씨' 다짐</span>
+                            <span class="text-slate-600">미래 성장할 나를 위해 지금 현실에서 씨앗처럼 뿌려야 할 작은 노력 다짐.</span>
+                        </div>
+                    </div>
+                `
+            },
+            'modal-app-integration': {
+                badge: '부록 5-3',
+                title: '자아 통합 - 정체성 선언문 및 한 줄 시',
+                html: `
+                    <div class="space-y-4">
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-emerald-700 font-bold block mb-2 text-base">정체성 선언문 완성</span>
+                            <span class="text-slate-600">부끄러움을 정직하게 마주하되 의지와 가치를 품고 바로 서는 정체성 문장 작성.</span>
+                        </div>
+                        <div class="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <span class="text-emerald-700 font-bold block mb-2 text-base">나를 담은 한 줄 시</span>
+                            <span class="text-slate-600">윤동주·이육사의 시적 비유를 응용하여 내 삶의 다짐을 담은 시구 완성.</span>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        function openModal(key) {
+            const data = modalData[key];
+            if (!data) return;
+
+            document.getElementById('modalCategoryBadge').innerText = data.badge;
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalContent').innerHTML = data.html;
+
+            const overlay = document.getElementById('modalOverlay');
+            overlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const overlay = document.getElementById('modalOverlay');
+            overlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function generateCard(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('inputName').value;
+            const date = document.getElementById('inputDate').value;
+            const well = document.getElementById('inputWell').value;
+            const handshake = document.getElementById('inputHandshake').value;
+            const blade = document.getElementById('inputBlade').value;
+            const rainbow = document.getElementById('inputRainbow').value;
+            const shame = document.getElementById('inputShame').value;
+            const will = document.getElementById('inputWill').value;
+            const poem = document.getElementById('inputOneLinePoem').value;
+
+            document.getElementById('cardOwnerTitle').innerText = `${name}의 정체성 선언문`;
+            document.getElementById('cardDate').innerText = date;
+            document.getElementById('cardShame').innerText = shame;
+            document.getElementById('cardWill').innerText = will;
+            document.getElementById('cardPoem').innerText = `"${poem}"`;
+            document.getElementById('cardWell').innerText = well;
+            document.getElementById('cardBlade').innerText = blade;
+            document.getElementById('cardRainbow').innerText = rainbow;
+            document.getElementById('cardHandshake').innerText = handshake;
+
+            const resultContainer = document.getElementById('cardResult');
+            resultContainer.classList.remove('hidden');
+            resultContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copyCardText() {
+            const name = document.getElementById('cardOwnerTitle').innerText;
+            const shame = document.getElementById('cardShame').innerText;
+            const will = document.getElementById('cardWill').innerText;
+            const poem = document.getElementById('cardPoem').innerText;
+
+            const textToCopy = `[${name}]\n정체성 선언: 나는 ${shame}(을/를) 정직하게 마주하되, ${will}(을/를) 품고 스스로 바로 서는 사람임.\n한 줄 시: ${poem}`;
+
+            const tempInput = document.createElement('textarea');
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            const msgBox = document.createElement('div');
+            msgBox.className = 'fixed bottom-5 right-5 z-50 bg-indigo-600 text-white px-5 py-3 rounded-xl text-sm shadow-xl font-medium';
+            msgBox.innerText = '클립보드에 선언문 텍스트 복사 완료함.';
+            document.body.appendChild(msgBox);
+
+            setTimeout(() => {
+                msgBox.remove();
+            }, 2500);
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Close modal on backdrop click
+        document.getElementById('modalOverlay').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
